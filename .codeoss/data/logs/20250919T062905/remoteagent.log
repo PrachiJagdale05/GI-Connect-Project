@@ -1,0 +1,12 @@
+2025-09-19 06:29:05.375 [info] 
+
+
+
+
+2025-09-19 06:29:05.401 [info] Extension host agent started.
+2025-09-19 06:29:09.142 [info] [127.0.0.1][9da433dc][ManagementConnection] New connection established.
+2025-09-19 06:29:09.356 [info] [127.0.0.1][fd17cbb5][ExtensionHostConnection] New connection established.
+2025-09-19 06:29:09.416 [info] ComputeTargetPlatform: linux-x64
+2025-09-19 06:29:10.340 [info] [127.0.0.1][fd17cbb5][ExtensionHostConnection] <1818> Launched Extension Host Process.
+2025-09-19 06:40:19.277 [info] [127.0.0.1][fd17cbb5][ExtensionHostConnection] <1818> Extension Host Process exited with code: 0, signal: null.
+2025-09-19 06:40:45.783 [info] [127.0.0.1][9da433dc][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...

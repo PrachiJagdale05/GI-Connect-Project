@@ -1,0 +1,4 @@
+SUPABASE_URL:"https://jumcsxhftlhxzmeqpuvb.supabase.co"
+SUPABASE_SERVICE_KEY:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1bWNzeGhmdGxoeHptZXFwdXZiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MjcwOTE5OCwiZXhwIjoyMDU4Mjg1MTk4fQ.MybCT34r5eeIU1mwHqfTjjGs5t5Nh_7KurK4MTC8o8U"
+CORS_ORIGIN: "https://gi-connectivity.lovable.app,https://preview--gi-connectivity.lovable.app"
+

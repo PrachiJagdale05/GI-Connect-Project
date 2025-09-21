@@ -1,0 +1,114 @@
+{
+  "rows": [
+    {
+      "json": {
+        "vendor_id": "c9b0f6a4-32e0-46bb-a9a6-ff412e27d125",
+        "name": "Organic Mango",
+        "description": "Fresh GI Certified Mango",
+        "price": 250.50,
+        "stock": 100,
+        "region": "Maharashtra",
+        "category": "Fruits"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "b27d23ef-49cd-4521-95cd-92c921c91aa9",
+        "name": "Darjeeling Tea",
+        "description": "Premium tea from Darjeeling",
+        "price": 500,
+        "stock": 20,
+        "region": "West Bengal",
+        "category": "Beverages"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "d51c89b2-56ac-4c21-9a36-82cd1ec56741",
+        "name": "Alphonso Mango",
+        "description": "Famous Ratnagiri Alphonso Mango",
+        "price": 499.99,
+        "stock": 50,
+        "region": "Maharashtra",
+        "category": "Fruits"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "f93bd0b1-88a2-4e4a-a56f-5f91dfbc9111",
+        "name": "Coorg Coffee",
+        "description": "Aromatic coffee from Coorg",
+        "price": 449.99,
+        "stock": 30,
+        "region": "Karnataka",
+        "category": "Beverages"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "a74e0a72-1a3f-4f32-9251-ec7c9f7e28f0",
+        "name": "Chanderi Saree",
+        "description": "Handwoven Chanderi silk saree",
+        "price": 1200.00,
+        "stock": 15,
+        "region": "Madhya Pradesh",
+        "category": "Textiles"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "d8a211d9-3906-4b55-8c83-569a8a730ca9",
+        "name": "Bhagalpuri Saree",
+        "description": "Traditional Bhagalpuri tussar silk",
+        "price": 2000.00,
+        "stock": 10,
+        "region": "Bihar",
+        "category": "Textiles"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "e2b08a7c-2e84-4b5e-80d2-0d7cf56ef8c2",
+        "name": "Kashmiri Saffron",
+        "description": "Pure saffron from Kashmir",
+        "price": 700.00,
+        "stock": 25,
+        "region": "Jammu & Kashmir",
+        "category": "Spices"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "f42c7e92-f5ff-4bc8-8a53-73c4b07014ad",
+        "name": "Phulkari Dupatta",
+        "description": "Hand embroidered Punjabi dupatta",
+        "price": 1000.00,
+        "stock": 12,
+        "region": "Punjab",
+        "category": "Textiles"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "ab9c12d2-1827-4f2c-bc02-86bb28f13dc0",
+        "name": "Mysore Sandal Soap",
+        "description": "Famous sandalwood soap from Mysore",
+        "price": 50.00,
+        "stock": 200,
+        "region": "Karnataka",
+        "category": "Personal Care"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "b73d92af-4c17-4ea4-bae7-00f44b6c4b1e",
+        "name": "Handmade Wooden Toys",
+        "description": "Traditional Channapatna wooden toys",
+        "price": 300.00,
+        "stock": 40,
+        "region": "Karnataka",
+        "category": "Handicrafts"
+      }
+    }
+  ]
+}

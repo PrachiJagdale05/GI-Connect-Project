@@ -1,0 +1,23 @@
+{
+  "name": "vendor-ai-worker",
+  "version": "1.0.0",
+  "description": "Cloud Run worker for vendor AI feature (Gemini Vision + Image Gen + Supabase)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cloud-run",
+    "vertex-ai",
+    "supabase",
+    "vendor-ai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}

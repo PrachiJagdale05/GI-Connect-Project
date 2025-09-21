@@ -1,0 +1,11 @@
+2025-09-20 06:56:30.585 [info] 
+
+
+
+
+2025-09-20 06:56:30.604 [info] Extension host agent started.
+2025-09-20 06:56:33.401 [info] [127.0.0.1][3762e122][ManagementConnection] New connection established.
+2025-09-20 06:56:33.507 [info] [127.0.0.1][50315e04][ExtensionHostConnection] New connection established.
+2025-09-20 06:56:33.699 [info] ComputeTargetPlatform: linux-x64
+2025-09-20 06:56:35.418 [info] [127.0.0.1][50315e04][ExtensionHostConnection] <1635> Launched Extension Host Process.
+2025-09-20 07:34:32.980 [info] [127.0.0.1][3762e122][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...

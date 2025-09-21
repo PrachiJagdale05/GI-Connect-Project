@@ -1,0 +1,21 @@
+{
+  "name": "gi-chatbot",
+  "version": "1.0.0",
+  "description": "Role-aware GI-Connect chatbot backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/vertexai": "^1.10.0",
+    "@supabase/supabase-js": "^2.57.2",
+    "axios": "^1.11.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

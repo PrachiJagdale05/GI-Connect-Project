@@ -1,0 +1,35 @@
+# Dockerfile for vendor-ai-worker (Node + light Python ML server)
+FROM node:18-bullseye-slim
+
+# Install OS deps for sharp / vips and Python for lightweight ML serving
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential python3 python3-pip python3-venv make g++ git ca-certificates \
+    libvips-dev pkg-config curl \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy package files first for npm caching
+COPY package.json package-lock.json* ./
+
+# Install Node dependencies (production)
+RUN npm install --production
+
+# Copy application files
+COPY . .
+
+# Install minimal Python deps for serving model endpoints (FastAPI/uvicorn + common libs).
+# If you have a requirements.txt, replace the pip install line to use it instead.
+RUN python3 -m pip install --no-cache-dir \
+    fastapi uvicorn[standard] aiohttp Pillow numpy
+
+# Copy and set entrypoint script
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+# Ensure port env default (Cloud Run expects 8080 by default)
+ENV PORT=8080
+EXPOSE 8080
+
+# Run entrypoint (starts Python server + Node worker)
+ENTRYPOINT ["/app/entrypoint.sh"]

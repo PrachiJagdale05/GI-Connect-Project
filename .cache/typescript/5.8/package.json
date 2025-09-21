@@ -1,0 +1,1 @@
+{"private":true,"dependencies":{"types-registry":"^0.1.738"},"devDependencies":{"@types/cors":"^2.8.19","@types/express":"^5.0.3","@types/node-fetch":"^2.6.13","@types/react":"^19.1.12","@types/whatwg-url":"^13.0.0"}}

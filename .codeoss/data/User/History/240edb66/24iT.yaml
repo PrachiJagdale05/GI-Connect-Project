@@ -1,0 +1,6 @@
+SUPABASE_URL: "https://jumcsxhftlhxzmeqpuvb.supabase.co"
+SUPABASE_SERVICE_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."
+CORS_ORIGIN: "https://gi-connectivity.lovable.app,https://preview--gi-connectivity.lovable.app"
+GCP_PROJECT: "giconnect-471219"
+VERTEX_LOCATION: "us-central1"
+MODEL_NAME: "gemini-1.5-flash"

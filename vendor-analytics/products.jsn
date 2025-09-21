@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "json": {
+        "vendor_id": "c9b0f6a4-32e0-46bb-a9a6-ff412e27d125",
+        "name": "Organic Mango",
+        "description": "Fresh GI Certified Mango",
+        "price": 250.50,
+        "stock": 100,
+        "region": "Maharashtra",
+        "category": "Fruits"
+      }
+    },
+    {
+      "json": {
+        "vendor_id": "b27d23ef-49cd-4521-95cd-92c921c91aa9",
+        "name": "Darjeeling Tea",
+        "description": "Premium tea from Darjeeling",
+        "price": 500,
+        "stock": 20,
+        "region": "West Bengal",
+        "category": "Beverages"
+      }
+    }
+  ]
+}
+

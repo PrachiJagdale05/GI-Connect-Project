@@ -1,0 +1,81 @@
+# Dockerfile - vendor-ai-worker with bundled Python ML service (CPU)
+FROM node:18-bullseye-slim AS base
+
+# ---------------------------
+# Install system deps (for Node + Python + libs)
+# ---------------------------
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    build-essential python3 python3-dev python3-venv python3-pip make git ca-certificates \
+    libvips-dev pkg-config curl wget libjpeg-dev libpng-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# ---------------------------
+# Install Node deps first (cacheable)
+# ---------------------------
+COPY package.json package-lock.json* ./
+RUN npm install --production
+
+# ---------------------------
+# Copy app sources
+# ---------------------------
+COPY . .
+
+# ---------------------------
+# Install Python ML packages (CPU wheels)
+# - Use PyTorch CPU wheels to avoid GPU dependency.
+# - Install FastAPI + uvicorn to expose a local inference server.
+# - Install lightweight vision libs (opencv headless).
+# ---------------------------
+# Use PyTorch CPU index for more reliable installs in many environments.
+RUN python3 -m pip install --upgrade pip setuptools wheel \
+ && python3 -m pip install --no-cache-dir \
+     "torch==2.2.0+cpu" "torchvision==0.15.2+cpu" --extra-index-url https://download.pytorch.org/whl/cpu \
+ && python3 -m pip install --no-cache-dir \
+     fastapi uvicorn[standard] pydantic Pillow opencv-python-headless \
+     transformers diffusers accelerate safetensors \
+     "git+https://github.com/facebookresearch/segment-anything.git@main" \
+ && python3 -m pip cache purge || true
+
+# ---------------------------
+# Entrypoint: start Python ML server + Node worker
+# ---------------------------
+# Create a small entrypoint script that:
+#  - starts the Python FastAPI ML server in background (127.0.0.1:5000)
+#  - then starts the Node worker (index.js) which listens on PORT (8080)
+# Your Node code should call the python endpoints at http://127.0.0.1:5000
+# ---------------------------
+RUN set -eux; \
+    cat > /app/entrypoint.sh <<'SH' ; \
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Optional: print env preview (useful in logs)
+echo "env preview:"
+env | grep -E 'SUPABASE|VERTEX|SEGMENT|INPAINT|WORKER|PORT' || true
+
+# Start Python ML server (FastAPI) on localhost:5000
+# Assumes there is a Python FastAPI app at ml/serve.py exposing "app"
+# The Python process runs in background so Node can start.
+if [ -f /app/ml/serve.py ]; then
+  echo "Starting Python ML server (ml/serve.py) on 127.0.0.1:5000"
+  # uvicorn auto-reloads only when running locally; do not enable here.
+  uvicorn ml.serve:app --host 127.0.0.1 --port 5000 --workers 1 &
+  sleep 1
+else
+  echo "No /app/ml/serve.py found — skipping Python server start"
+fi
+
+# Finally start Node app
+echo "Starting Node worker on port ${PORT:-8080}"
+exec node index.js
+SH
+    chmod +x /app/entrypoint.sh
+
+# Expose Node port (Cloud Run expects 8080 by default)
+ENV PORT=8080
+EXPOSE 8080
+
+# Final command
+CMD ["/app/entrypoint.sh"]
