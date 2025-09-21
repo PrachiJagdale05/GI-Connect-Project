@@ -1,0 +1,181 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 9 86% 57%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 46 73% 75%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 183 100% 33%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 9 86% 57%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 6% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 6% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 6% 14%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 9 86% 57%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 46 73% 75%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 183 100% 33%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 9 86% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/70 dark:bg-black/30 border border-white/20 dark:border-white/10;
+  }
+  
+  .glass-card {
+    @apply glass shadow-soft rounded-xl transition-all duration-300 hover:shadow-medium;
+  }
+  
+  .glass-button {
+    @apply glass shadow-soft rounded-lg transition-all duration-300 hover:shadow-medium active:scale-95;
+  }
+  
+  .animate-in {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+  
+  .fade-in {
+    @apply animate-in animate-fade-in;
+  }
+  
+  .slide-in-from-right {
+    @apply animate-in animate-slide-in-right;
+  }
+  
+  .slide-in-from-left {
+    @apply animate-in animate-slide-in-left;
+  }
+  
+  .slide-in-from-bottom {
+    @apply animate-in animate-slide-in-bottom;
+  }
+
+  .scale-in {
+    @apply animate-in animate-scale-in;
+  }
+  
+  /* New gradient utility classes */
+  .bg-gradient-saffron {
+    @apply bg-gradient-to-r from-vibrant-saffron to-vibrant-marigold;
+  }
+  
+  .bg-gradient-spice {
+    @apply bg-gradient-to-r from-vibrant-spice to-vibrant-turmeric;
+  }
+  
+  .bg-gradient-lotus {
+    @apply bg-gradient-to-r from-vibrant-lotus to-vibrant-silk;
+  }
+  
+  .bg-gradient-peacock {
+    @apply bg-gradient-to-r from-vibrant-peacock to-teal-400;
+  }
+  
+  .bg-gradient-mehendi {
+    @apply bg-gradient-to-r from-vibrant-mehendi to-green-300;
+  }
+  
+  .text-gradient {
+    @apply text-transparent bg-clip-text;
+  }
+  
+  /* Enhanced hover effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-colorful;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+}
