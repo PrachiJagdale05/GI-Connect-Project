@@ -1,30 +1,3 @@
-    "occurred_at":"2025-09-16T12:00:00Z"
-  }'
-ls
-cd gi-analytics
-supabase functions deploy analytics
-supabase secrets list
-# 1. Download latest Supabase CLI
-curl -fsSL https://github.com/supabase/cli/releases/download/v1.183.4/supabase_linux_amd64.tar.gz -o supabase.tar.gz
-# 2. Extract
-tar -xzf supabase.tar.gz
-# 3. Create a persistent bin folder if not exists
-mkdir -p $HOME/bin
-# 4. Move supabase binary there
-mv supabase $HOME/bin/
-curl -fsSL https://github.com/supabase/cli/releases/download/v1.183.4/supabase_linux_amd64.tar.gz -o supabase.tar.gz
-tar -xzf supabase.tar.gz
-mv supabase $HOME/bin/
-supabase functions deploy analytics
-curl -fsSL https://github.com/supabase/cli/releases/download/v1.183.4/supabase_linux_amd64.tar.gz -o supabase.tar.gz
-tar -xzf supabase.tar.gz
-sudo mv supabase /usr/local/bin/supabase
-supabase --version
-supabase functions deploy analytics
-supabase functions delete analytics
-supabase functions delete bin
-supabase functions delete analytics
-curl -s -w "\nHTTP_STATUS:%{http_code}\n"   -X POST "https://jumcsxhftlhxzmeqpuvb.functions.supabase.co/analytics"   -H "Content-Type: application/json"   -H "Authorization: Bearer $ANON_KEY"   -d '{
 curl -s -w "\nHTTP_STATUS:%{http_code}\n"   -X POST "https://jumcsxhftlhxzmeqpuvb.functions.supabase.co/analytics"   -H "Content-Type: application/json"   -H "Authorization: Bearer $ANON_KEY"   -d '{
     "event_id":"evt001",
     "event_type":"product_added",
@@ -515,3 +488,13 @@ git pull origin main
 git config pull.rebase false
 git pull origin main
 git pull origin main --allow-unrelated-histories
+git add .
+git commit
+git push origin main
+pip3 install git-filter-repo
+git filter-repo --path giconnect-471219-212b8cb0b4b8.json --invert-paths
+/home/prachijagdale26/.local/bin/git-filter-repo --path giconnect-471219-212b8cb0b4b8.json --invert-paths
+git push origin main
+echo "giconnect-471219-212b8cb0b4b8.json" >> .gitignore
+echo ".cache/" >> .gitignore
+/home/prachijagdale26/.local/bin/git-filter-repo --path giconnect-471219-212b8cb0b4b8.json --path .cache --invert-paths
