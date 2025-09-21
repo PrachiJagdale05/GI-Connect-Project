@@ -187,7 +187,7 @@ go run . help
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/77cf30c8-9563-4791-8763-fdc5946aa145
+**URL**: https://gi-connectivity.lovable.app/
 
 ## How can I edit this code?
 
