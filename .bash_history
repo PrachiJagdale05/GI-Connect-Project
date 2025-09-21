@@ -508,3 +508,10 @@ echo "supabase.tar.gz" >> .gitignore
 git pull origin main --allow-unrelated-histories
 git remote add origin https://github.com/MALIBALAJI95/GI-connect-project.git
 git pull origin main --allow-unrelated-histories
+git add .
+git commit -m "Add project files from Cloud Shell"
+git push origin main
+git pull origin main
+git config pull.rebase false
+git pull origin main
+git pull origin main --allow-unrelated-histories
